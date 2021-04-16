@@ -1,0 +1,32 @@
+<h1>Sale#dashboard</h1>
+
+<div>
+    <h1>Last 12 months Sales</h1>
+    <%= line_chart @data_12_months.totalize_sales, legend: "top", label: "Price" , prefix: "$" %>
+</div>
+
+<div>
+    <h1>Last 12 months Sales Counter</h1>
+    <%= line_chart @data_12_months.totalize_counts, legend: "top", label: "Counter" %>
+</div>
+
+<div>
+    <h1>Last 12 months Average</h1>
+    <%= line_chart @data_12_months.totalize_average, legend: "top", label: "Average", prefix: "$" %>
+</div>
+
+<div>
+    <h1>Sales by Origin</h1>
+    <%= pie_chart @data_12_months.get_origins, legend: "top", title: "Last 12 months", label: "count" %>
+    <%= pie_chart @data_6_months.get_origins, legend: "top", title: "Last 6 months", label: "count" %>
+    <%= pie_chart @data_3_months.get_origins, legend: "top", title: "Last 3 months", label: "count" %>
+    <%= pie_chart @data_last_month.get_origins, legend: "top", title: "Last month", label: "count" %>
+</div>
+
+<div>
+    <h1>Sales by Blend</h1>
+    <%= pie_chart @data_12_months.get_blends, legend: "top", title: "Last 12 months", label: "count" %>
+    <%= pie_chart @data_6_months.get_blends, legend: "top", title: "Last 6 months", label: "count" %>
+    <%= pie_chart @data_3_months.get_blends, legend: "top", title: "Last 3 months", label: "count" %>
+    <%= pie_chart @data_last_month.get_blends, legend: "top", title: "Last month", label: "count" %>
+</div>
